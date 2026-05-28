@@ -8,27 +8,19 @@ Curated by [George Papadakis](https://github.com/GP-80) &nbsp;·&nbsp; <a href="
 
 ## What is openEO?
 
-If you have used Google Earth Engine, you already know the core idea: load some satellite imagery, filter it by date and area, run some calculations (NDVI, composites, classifications), and export the result — all without downloading a single file to your laptop. openEO lets you do exactly the same thing, but with one important difference: **your code is not tied to Google**.
+**openEO** is an open standard for processing satellite imagery in the cloud. The idea will feel familiar if you have used tools like Google Earth Engine: pick a dataset, filter by date and area, chain together operations (NDVI, composites, classifications), and get results back — all running remotely, on large data, without managing infrastructure.
 
-### The GEE analogy
-
-In GEE, you write code that runs on Google's servers against Google's copy of the data. It's powerful, but if Google changes the pricing, restricts access, or simply doesn't have a dataset you need, you're stuck rewriting everything for a different platform.
-
-openEO solves this by acting as a **common language** that multiple cloud platforms all understand. You write your analysis once in Python (or R, or JavaScript), and you can run it on Copernicus, VITO, EODC, or any other openEO-compatible platform by changing a single line — the one that says which platform to connect to.
-
-Think of it like SQL: you learn the language once, and it works on Postgres, MySQL, SQLite, and dozens of others. openEO is that, but for satellite data processing in the cloud.
+What sets openEO apart is that it is not tied to any single provider. The same Python code runs on the Copernicus Data Space, VITO/Terrascope, EODC, or any other platform that implements the standard. Switching platforms is a one-line change. It became an official OGC international standard in 2026.
 
 ### What a workflow looks like
-
-A typical openEO workflow in Python feels very similar to what you already know from GEE:
 
 ```python
 import openeo
 
-# Connect to a cloud platform (swap this line to change platforms)
+# Connect to a platform
 conn = openeo.connect("https://openeo.dataspace.copernicus.eu").authenticate_oidc()
 
-# Load Sentinel-2 imagery for your area and time range
+# Load Sentinel-2 imagery
 cube = conn.load_collection(
     "SENTINEL2_L2A",
     spatial_extent={"west": 4.0, "south": 51.0, "east": 4.5, "north": 51.5},
@@ -36,40 +28,35 @@ cube = conn.load_collection(
     bands=["B04", "B08"],
 )
 
-# Compute NDVI
-ndvi = cube.ndvi(nir="B08", red="B04")
-
-# Export the result
-ndvi.download("ndvi.tiff")
+# Compute NDVI and download
+cube.ndvi(nir="B08", red="B04").download("ndvi.tiff")
 ```
 
-That's it. The platform handles everything else — accessing the data, running the computation at scale, and returning your result.
+The platform handles data access and computation at scale. You get a file back.
 
-### Key concepts (in plain terms)
+### Key concepts
 
 | Term | What it means |
 |---|---|
-| **Collection** | A dataset on the platform — like a GEE `ImageCollection` (e.g. `SENTINEL2_L2A`). |
-| **Data Cube** | Your loaded imagery: a 3D block of pixels with space, time, and band dimensions. |
-| **Process** | A built-in operation you can chain together — `ndvi`, `filter_bbox`, `reduce_dimension`, etc. |
-| **Backend** | The cloud platform running your code (Copernicus, VITO, EODC, and others). |
-| **UDP** | A reusable workflow you save and share — like a GEE function, but portable across platforms. |
-| **UDF** | A block of custom Python or R code you can plug into your workflow for things no built-in process covers. |
+| **Collection** | A named dataset on the platform (e.g. `SENTINEL2_L2A`). |
+| **Data Cube** | Your loaded imagery as a 3D block of pixels — space, time, and bands. |
+| **Process** | A built-in operation you chain together — `ndvi`, `filter_bbox`, `aggregate_temporal`, etc. |
+| **Backend** | The cloud platform that runs your code (Copernicus, VITO, EODC, and others). |
+| **UDP** | A User-Defined Process — a reusable, shareable workflow you author once and run anywhere. |
+| **UDF** | A User-Defined Function — custom Python or R code embedded in a workflow for bespoke processing. |
 
-### How it compares to GEE
+### How it fits alongside other platforms
 
-| | **openEO** | **Google Earth Engine** |
-|---|---|---|
-| **Who runs your code** | Your choice of cloud platform | Google only |
-| **Code portability** | Works on any openEO-compatible backend | GEE only |
-| **Open standard** | Yes — official OGC standard since 2026 | No |
-| **Python support** | Yes, first-class | Yes |
-| **Free access** | Yes, via Copernicus Data Space | Yes, for research |
-| **No-code option** | Web Editor, QGIS plugin | Code Editor (JS) |
-| **Custom code in workflows** | Yes (Python/R UDFs) | Yes (JavaScript) |
-| **Your data stays yours** | Yes — export anywhere | Tied to Google Cloud |
+openEO is not a replacement for any particular platform — it is a common language that several platforms speak. You can use it alongside or instead of other tools depending on what data you need and where it lives.
 
-The short version: if GEE taught you *how* to think about cloud EO processing, openEO gives you that same power without the lock-in.
+| | **openEO** | **Google Earth Engine** | **Sentinel Hub** | **OpenDataCube** |
+|---|---|---|---|---|
+| **Open standard** | Yes (OGC, 2026) | No | No | No |
+| **Multi-platform** | Yes — same code, multiple backends | No | No | No |
+| **Python support** | Yes | Yes | Yes | Yes |
+| **No-code option** | Web Editor, QGIS plugin | Code Editor | Dashboard | No |
+| **Free access** | Yes, via Copernicus Data Space | Yes, for research | Freemium | Self-hosted |
+| **Custom code** | Python / R UDFs | JavaScript | Python | Python |
 
 ---
 
