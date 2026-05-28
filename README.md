@@ -2,6 +2,8 @@
 
 > A curated list of resources for openEO — the open API standard for cloud-based Earth Observation processing.
 
+Curated by [George Papadakis](https://github.com/GP-80) &nbsp;·&nbsp; [![Support me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D8T02WH)
+
 ---
 
 ## What is openEO?
