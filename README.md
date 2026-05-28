@@ -110,7 +110,7 @@ openEO is not a replacement for any particular platform — it is a common langu
 ## Official Resources
 
 - [openEO Documentation](https://openeo.org/documentation/1.0/) - Main documentation portal covering concepts, client guides, and developer references.
-- [openEO API Reference (v1.2.0)](https://openeo.org/documentation/1.0/developers/api/reference.html) - Full OpenAPI-based HTTP API reference.
+- [openEO API Reference](https://api.openeo.org/) - Full OpenAPI-based HTTP API reference.
 - [openEO Processes](https://github.com/Open-EO/openeo-processes) - The canonical JSON definitions of all interoperable predefined processes.
 - [openEO API Profiles](https://openeo.org/documentation/1.0/developers/profiles/api.html) - Compliance tiers: L1 Minimal, L2 Recommended, L3 Advanced.
 - [openEO Architecture](https://openeo.org/documentation/1.0/developers/arch.html) - Technical overview of the client–API–backend architecture.
@@ -296,7 +296,7 @@ openEO is not a replacement for any particular platform — it is a common langu
 
 ## Podcasts
 
-- [Scene From Above – Matthias Mohr on openEO & STAC](http://scenefromabove.org/podcasts.html) - EO-focused podcast episode with openEO lead developer Matthias Mohr discussing openEO and STAC.
+- Scene From Above – Matthias Mohr on openEO & STAC - EO-focused podcast episode with openEO lead developer Matthias Mohr discussing openEO and STAC. *(site currently offline)*
 - [The MapScaping Podcast](https://mapscaping.com/podcasts/) - Geospatial industry podcast that has featured openEO as one of the transformative open-source projects in EO.
 
 ---
@@ -372,7 +372,7 @@ openEO is not a replacement for any particular platform — it is a common langu
 - [openEO Platform Forums](https://forums.openeo.cloud/) - User discussion forum for the openEO Platform.
 - [EODC Discussions – openEO Platform](https://discuss.eodc.eu/c/openeo-platform/5) - EODC-hosted forum for backend-specific discussions.
 - [openEO GitHub Organization](https://github.com/Open-EO) - All source code, issue trackers, and GitHub Discussions.
-- [openEO LinkedIn](https://linkedin.com/company/openeo) - Official LinkedIn page for announcements.
+- [openEO LinkedIn](https://www.linkedin.com/company/openeo/) - Official LinkedIn page for announcements.
 - [Pangeo Discourse – openEO Backend](https://discourse.pangeo.io/t/pangeo-openeo-backend/815) - Pangeo community thread on building an openEO-compatible backend.
 
 ---
@@ -411,7 +411,7 @@ openEO is not a replacement for any particular platform — it is a common langu
 
 - [OGC Community Standard Announcement (May 2026)](https://openeo.org/news/2026-05-14-openeo-is-an-ogc-community-standard.html) - openEO adopted as an official OGC Community Standard.
 - [OGC – openEO Standard Page](https://www.ogc.org/requests/ogc-looks-to-adopt-openeo-as-community-standard-seeking-public-comment-before-moving-to-vote/) - OGC's official page covering the standardisation process.
-- [OGC Work Item Justification (PDF)](https://portal.ogc.org/files/106981) - Formal submission document justifying openEO as an OGC Community Standard.
+- [OGC – openEO Standard Page](https://www.ogc.org/requests/ogc-looks-to-adopt-openeo-as-community-standard-seeking-public-comment-before-moving-to-vote/) - OGC's official page covering the standardisation process and submission.
 - [openEO Submitted to OGC (Dec 2023)](https://openeo.org/news/2023-12-06-openeo-submitted-to-ogc.html) - PSC announcement of OGC submission.
 - [openEO API Federation Extension](https://github.com/Open-EO/openeo-api/tree/master/extensions/federation) - Extension defining how multiple backends interoperate as a federation.
 
@@ -437,5 +437,5 @@ openEO is not a replacement for any particular platform — it is a common langu
 - [OpenEO: an API that Unifies Access to EO Data (2018)](https://52north.org/wp-content/uploads/2018/09/GSW18_OpenEO_pebesma.pdf) - First formal paper describing the openEO API concept.
 - [openEO Proves Its Concept (2018)](https://openeo.org/news/2018-03-15-poc.html) - Milestone announcement: proof-of-concept demonstrated across multiple backends.
 - [Stable Release of openEO API v1.0.0 (2020)](https://openeo.org/news/2020-07-31-openeo-api-released.html) - The first stable, production-ready API release.
-- [New openEO Releases: API v1.2.0 / Processes 2.0.0 RC1 (2023)](https://openeo.org/news/2023-05-25-new-openeo-versions-120-200rc1%20copy.html) - Major release adding vector data support.
+- [New openEO Releases: API v1.2.0 / Processes 2.0.0 RC1 (2023)](https://openeo.org/news/2023-05-25-new-openeo-versions-120-200rc1.html) - Major release adding vector data support.
 - [openEO Is an OGC Community Standard (2026)](https://openeo.org/news/2026-05-14-openeo-is-an-ogc-community-standard.html) - The most recent major milestone: adoption as an international standard.
