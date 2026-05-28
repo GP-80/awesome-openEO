@@ -10,7 +10,7 @@ Curated by [George Papadakis](https://github.com/GP-80) &nbsp;·&nbsp; <a href="
 
 **openEO** is an open standard for processing satellite imagery in the cloud. The idea will feel familiar if you have used tools like Google Earth Engine: pick a dataset, filter by date and area, chain together operations (NDVI, composites, classifications), and get results back — all running remotely, on large data, without managing infrastructure.
 
-What sets openEO apart is that it is not tied to any single provider. The same Python code runs on the Copernicus Data Space, VITO/Terrascope, Google Earth Engine, EODC, or any other platform that implements the standard. Switching platforms is a one-line change. It became an official OGC international standard in 2026.
+What sets openEO apart is that it is not tied to any single provider. The same Python code runs on the Copernicus Data Space, VITO/Terrascope, Google Earth Engine (via a community driver, not officially supported by Google), EODC, or any other platform that implements the standard. Switching platforms is a one-line change. It became an official OGC international standard in 2026.
 
 ### What a workflow looks like
 
